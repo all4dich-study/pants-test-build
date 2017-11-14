@@ -1,4 +1,3 @@
-os: osx
 language: python
 script:
 - wget http://apache.mirror.cdnetworks.com/aurora/0.18.0/apache-aurora-0.18.0.tar.gz
