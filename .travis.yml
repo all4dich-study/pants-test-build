@@ -1,9 +1,6 @@
 language: java
 script:
-- wget https://services.gradle.org/distributions/gradle-3.1-bin.zip
-- unzip gradle-3.1-bin.zip && pushd gradle-3.1/bin && export PATH=$(pwd):${PATH}
-- which gradle &&  popd
-- wget http://apache.mirror.cdnetworks.com/aurora/0.18.0/apache-aurora-0.18.0.tar.gz
-- tar xvzf apache-aurora-0.18.0.tar.gz
-- pushd apache-aurora-0.18.0/
-- gradle build
+- wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/bin/apache-tomcat-8.5.23.tar.gz
+- tar -xvzf apache-tomcat-8.5.23.tar.gz
+- pushd apache-tomcat-8.5.23/
+- ant
