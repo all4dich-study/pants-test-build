@@ -1,7 +1,7 @@
 language: java
 script:
 - wget https://services.gradle.org/distributions/gradle-3.5-bin.zip && 
-  unzip gradle-3.5-bin.zip && pushd gradle-3.5/bin && export PATH=$(pwd):${PATH|} &&
+  unzip gradle-3.5-bin.zip && pushd gradle-3.5/bin && export PATH=$(pwd):${PATH} &&
   which gradle && exit 0 &&
   wget http://apache.mirror.cdnetworks.com/aurora/0.18.0/apache-aurora-0.18.0.tar.gz &&
   tar xvzf apache-aurora-0.18.0.tar.gz &&
