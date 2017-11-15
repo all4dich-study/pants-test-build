@@ -1,12 +1,13 @@
 language: java
 install:
     - apt-get install -y htop
+before_install:
+    - sudo apt-get -y install htop
 jobs:
     include:
       - stage: Clone
         language: java
         script:
-        - ls ddd
         - mkdir -p ${HOME}/work
         - pushd ${HOME}/work
         - wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz
