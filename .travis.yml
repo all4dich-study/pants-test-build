@@ -1,6 +1,4 @@
 language: java
-install:
-    - apt-get install -y htop
 before_install:
     - sudo apt-get -y install htop
 jobs:
