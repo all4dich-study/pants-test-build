@@ -1,4 +1,6 @@
 language: java
+install:
+    - apt-get install -y htop
 jobs:
     include:
       - stage: Clone
