@@ -2,16 +2,15 @@ language: java
 jobs:
     include:
       - stage: Clone
+        language: java
         script:
-        - pwd
-        - ls
-        - env
+        - mkdir -p ${HOME}/work
+        - pushd ${HOME}/work
         - wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz
         - tar -xvzf apache-tomcat-8.5.23-src.tar.gz
       - stage: Build
+        language: java
         script:
-        - pwd
-        - ls
         - env
-        - pushd apache-tomcat-8.5.23-src/
+        - pushd ${HOME}/work/apache-tomcat-8.5.23-src/
         - ant
