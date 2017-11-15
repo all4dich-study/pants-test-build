@@ -3,9 +3,13 @@ jobs:
     include:
       - stage: Clone
         script:
+        - pwd
+        - ls
         - wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz
         - tar -xvzf apache-tomcat-8.5.23-src.tar.gz
       - stage: Build
         script:
+        - pwd
+        - ls
         - pushd apache-tomcat-8.5.23-src/
         - ant
