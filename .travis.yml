@@ -6,8 +6,8 @@ jobs:
       - stage: Clone
         language: java
         jdk:
-        - oraclejdk8
-        - oraclejdk9
+          - oraclejdk8
+          - oraclejdk9
         script:
         - which java
         - mkdir -p ${HOME}/work
