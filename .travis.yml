@@ -1,9 +1,18 @@
+stages:
+- test
+- check
+- build
 language: java
-script:
-- wget https://services.gradle.org/distributions/gradle-3.1-bin.zip
-- unzip gradle-3.1-bin.zip && pushd gradle-3.1/bin && export PATH=$(pwd):${PATH}
-- which gradle &&  popd
-- wget http://apache.mirror.cdnetworks.com/aurora/0.18.0/apache-aurora-0.18.0.tar.gz
-- tar xvzf apache-aurora-0.18.0.tar.gz
-- pushd apache-aurora-0.18.0/
-- gradle build
+env:
+  global:
+  - ARTIFACTS_REGION="ap-northeast-1"
+  - ARTIFACTS_BUCKET="lgtv-tokyo"
+  - secure: puDK4O8PtVpcxKGDnIKf87Dmk167aOxgw3Kig9zXh3/3/pukwBfTtv98u85yxGGdUN3Aje1Zf2Wv4uFJ5d3J963D2ppqhNRFCVM62usuem/sTTDrJP1NQKS/VjBlAOryZvbFbKbZVPExQPnm8wEbqySipGlfy4+Fs0c4FPsT89UhkRC6fHKgu8RhtwSXyVopiahmNTJ8IoeoCQYniPLfuPdTXxmSoEJJ6mDckx0JaR7j5A98puhfbcF/yV4DYbQI/Og0knoLO8di5ZdDHscZDFcXCgpCD7fMpM0ZCEoeLFvoYaEFXLJfj1gkz42FYr/wVyE3ztFwLmY0h/YWtNkUkGu4ojwJkyB3519MCdXCYb3/XzxFaQqPLwmck0yb7tKPe0DyMyTlJgMc+AVeKEdHB8xpHXzA8znCBd3DupoI5hMRg4LB9T4Ecm2VjzoYB35am2tAAbH2OAsDo8vDQWYqpEDg2PayQYqcwQxcCZ9whlcLk9GUCcA9qk/3+51Qr3yrEwRUQoRHbcEy+yzuw6dkY6OrZoc1lCHeWxt0oeKRSTWjp2FynmGVDLUrqnc9i7so5fRzaH46YigJ+rnZe0Np8HqxfGE1QFonOHzN/y59Ptv3O8LAryhdu/rS24XyyEILDqmDEo6mDX3IJDHO3q0kEcI357z4fDVBltKh1sq8P8w=
+  - secure: HgpQCYGDxieIdeX0TFzX8gBP5yfcou/d2honPfyxBZB/Ag3sxDfHwG+nVXFfPy44kQeLgo/ok+m2CaY/yf9wVLu/R8RvFPYphuR5WOTPyGZ3l2GMJ1wU1sudf/S3g+uk8KyHRPHzzIx+wPSgorm5WJlFYuE1b0tz6BzpN1zSc93sV6bdNFlEceBpbdAEbYt7csTWIZZbEhbM9DLrUyunhbvUMsuv6RdIk5/RSQ9xihWuU0ejhX6wPCcijDB2j1YHctbrAyMiXFKy/crhRktZFzezxx3fT9r4TGoJ5205j9xO1WO+lytKZADqIgTMDCTGBwZYzVLKSHjpgsKL24irO6xPp+0qxkP9YYLZaoBaIg9lN0Ttg7FnecCUfwxLtk54AMoWL6PxMN9srifK6o+/b9nlhgdLiFkPg/iQ7j/+Yck5LgF8VT3Hmh418wKGXl3Ugw5A31wUkm4jrKKuknFxMQiBFT3hiiQb0jig3reXmywZ4ImIpcZ/0/Dm2IF5lW9+Yg4QIvIJLWcsIzER3CMaZL3MEuAY4Nx7NxUdts+WaBoyy0cZnf0vl/NhIYo+5x8Tm4KfsVMKoF5Dl//iYkD7gmlMVGoaS/6nHGRq+pED4xCYi3OsP9esDZtBj2wSG75lsXkuyMU7UF3Y15ci6WvPwuxcmTQ2lQoLNutuARYPgjI=
+script: java -version && ls && wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz
+  && echo 1 > data.txt
+addons:
+  artifacts:
+    paths:
+    - data.txt
+    - apache-tomcat-8.5.23-src.tar.gz
