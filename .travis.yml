@@ -1,6 +1,6 @@
 language: java
 script:
-- wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/bin/apache-tomcat-8.5.23.tar.gz
-- tar -xvzf apache-tomcat-8.5.23.tar.gz
-- pushd apache-tomcat-8.5.23/
+- wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz
+- tar -xvzf apache-tomcat-8.5.23-src.tar.gz
+- pushd apache-tomcat-8.5.23-src/
 - ant
