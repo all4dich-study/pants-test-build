@@ -4,11 +4,14 @@ before_install:
 jdk:
     - oraclejdk8
     - oraclejdk9
-script:
-    - java -version
-    - mkdir -p ${HOME}/work
-    - pushd ${HOME}/work
-    - wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz
-    - tar -xvzf apache-tomcat-8.5.23-src.tar.gz
-    - pushd ${HOME}/work/apache-tomcat-8.5.23-src/
-    - ant
+jobs:
+    include:
+        - stage: Build
+          script:
+          - java -version
+          - mkdir -p ${HOME}/work
+          - pushd ${HOME}/work
+          - wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz
+          - tar -xvzf apache-tomcat-8.5.23-src.tar.gz
+          - pushd ${HOME}/work/apache-tomcat-8.5.23-src/
+          - ant
