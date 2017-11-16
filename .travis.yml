@@ -2,6 +2,7 @@ stages:
     - test
     - check
     - build
+language: java
 jdk:
     - oraclejdk8
     - oraclejdk9
