@@ -9,15 +9,21 @@ jobs:
         - stage: build
           language: java
           jdk: oraclejdk8
-          script: java -version && mkdir -p ${HOME}/work && pushd ${HOME}/work && wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz && tar -xvzf apache-tomcat-8.5.23-src.tar.gz && pushd ${HOME}/work/apache-tomcat-8.5.23-src/ && ant
+          script: java -version && mkdir -p ${HOME}/work && wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz
+          deploy:
+            provider: s3
+            access_key_id: AKIAIMGRKWOD7RHEEGIQ 
+            secret_access_key: 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
+            bucket: "lgtv-test"
         -
           language: java
           jdk: oraclejdk9
           script: java -version && git clone https://github.com/lucamilanesio/github-api.git
-          deploy: &heroku
-            provider: heroku
-            app: z-testapp
-            api_key: c885df74-6ce5-4737-b430-0a322c1beb7a
+          deploy:
+            provider: s3
+            access_key_id: AKIAIMGRKWOD7RHEEGIQ 
+            secret_access_key: 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
+            bucket: "lgtv-test"
         - stage: check
           language: java
           jdk: oraclejdk9
