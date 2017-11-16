@@ -4,10 +4,6 @@ before_install:
 jdk:
     - oraclejdk8
     - oraclejdk9
-matrix:
-    include:
-        - jdk: oraclejdk8
-        - jdk: oraclejdk8
 script:
     - which java
     - mkdir -p ${HOME}/work
