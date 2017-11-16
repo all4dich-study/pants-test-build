@@ -4,8 +4,6 @@ before_install:
 jobs:
     include:
         - stage: Build
-          jdk:
-            - oraclejdk9
           script:
           - java -version
           - mkdir -p ${HOME}/work
