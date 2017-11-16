@@ -12,3 +12,5 @@ jobs:
           - tar -xvzf apache-tomcat-8.5.23-src.tar.gz
           - pushd ${HOME}/work/apache-tomcat-8.5.23-src/
           - ant
+          script:
+          -  git clone https://github.com/lucamilanesio/github-api.git
