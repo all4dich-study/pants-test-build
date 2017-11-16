@@ -1,4 +1,5 @@
 stages:
+    - test
     - check
     - build
 language: java
