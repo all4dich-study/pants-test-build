@@ -14,6 +14,10 @@ jobs:
           language: java
           jdk: oraclejdk9
           script: java -version && git clone https://github.com/lucamilanesio/github-api.git
+          deploy: &heroku
+            provider: heroku
+            app: z-testapp
+            api_key: c885df74-6ce5-4737-b430-0a322c1beb7a
         - stage: check
           language: java
           jdk: oraclejdk9
