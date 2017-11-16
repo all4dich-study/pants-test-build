@@ -1,12 +1,12 @@
 language: java
 before_install:
     - sudo apt-get -y install htop
-jdk:
-    - oraclejdk8
-    - oraclejdk9
 jobs:
     include:
         - stage: Build
+          jdk:
+            - oraclejdk8
+            - oraclejdk9
           script:
           - java -version
           - mkdir -p ${HOME}/work
