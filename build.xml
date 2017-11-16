@@ -1,0 +1,6 @@
+<project>
+<target name="test">
+  <exec executable="hostname">
+  </exec>
+</target>
+</project>
