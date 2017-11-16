@@ -8,21 +8,11 @@ matrix:
     include:
         - jdk: oraclejdk8
         - jdk: oraclejdk8
-
-jobs:
-    include:
-      - stage: Clone
-        language: java
-        script:
-        - which java
-        - mkdir -p ${HOME}/work
-        - pushd ${HOME}/work
-        - wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz
-        - tar -xvzf apache-tomcat-8.5.23-src.tar.gz
-        - pushd ${HOME}/work/apache-tomcat-8.5.23-src/
-        - ant
-      - stage: Build
-        language: java
-        script:
-        - env
-        - which java
+script:
+    - which java
+    - mkdir -p ${HOME}/work
+    - pushd ${HOME}/work
+    - wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz
+    - tar -xvzf apache-tomcat-8.5.23-src.tar.gz
+    - pushd ${HOME}/work/apache-tomcat-8.5.23-src/
+    - ant
