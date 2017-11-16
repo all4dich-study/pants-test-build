@@ -3,14 +3,14 @@ stages:
     - check
     - build
 language: java
-jdk:
-    - oraclejdk8
-    - oraclejdk9
 jobs:
     include:
         - state: test
           script: echo "Hello, world"
         - stage: build
+          jdk:
+                - oraclejdk8
+                - oraclejdk9
           script: mkdir -p ${HOME}/work && pushd ${HOME}/work && wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz && tar -xvzf apache-tomcat-8.5.23-src.tar.gz && pushd ${HOME}/work/apache-tomcat-8.5.23-src/ && ant
         -
           script: git clone https://github.com/lucamilanesio/github-api.git
