@@ -2,11 +2,14 @@ language: c
 env:
   global:
   - ARTIFACTS_REGION="ap-northeast-1"
-  - ARTIFACTS_BUCKET="lgtv-tokyo"
-  - secure: puDK4O8PtVpcxKGDnIKf87Dmk167aOxgw3Kig9zXh3/3/pukwBfTtv98u85yxGGdUN3Aje1Zf2Wv4uFJ5d3J963D2ppqhNRFCVM62usuem/sTTDrJP1NQKS/VjBlAOryZvbFbKbZVPExQPnm8wEbqySipGlfy4+Fs0c4FPsT89UhkRC6fHKgu8RhtwSXyVopiahmNTJ8IoeoCQYniPLfuPdTXxmSoEJJ6mDckx0JaR7j5A98puhfbcF/yV4DYbQI/Og0knoLO8di5ZdDHscZDFcXCgpCD7fMpM0ZCEoeLFvoYaEFXLJfj1gkz42FYr/wVyE3ztFwLmY0h/YWtNkUkGu4ojwJkyB3519MCdXCYb3/XzxFaQqPLwmck0yb7tKPe0DyMyTlJgMc+AVeKEdHB8xpHXzA8znCBd3DupoI5hMRg4LB9T4Ecm2VjzoYB35am2tAAbH2OAsDo8vDQWYqpEDg2PayQYqcwQxcCZ9whlcLk9GUCcA9qk/3+51Qr3yrEwRUQoRHbcEy+yzuw6dkY6OrZoc1lCHeWxt0oeKRSTWjp2FynmGVDLUrqnc9i7so5fRzaH46YigJ+rnZe0Np8HqxfGE1QFonOHzN/y59Ptv3O8LAryhdu/rS24XyyEILDqmDEo6mDX3IJDHO3q0kEcI357z4fDVBltKh1sq8P8w=
-  - secure: HgpQCYGDxieIdeX0TFzX8gBP5yfcou/d2honPfyxBZB/Ag3sxDfHwG+nVXFfPy44kQeLgo/ok+m2CaY/yf9wVLu/R8RvFPYphuR5WOTPyGZ3l2GMJ1wU1sudf/S3g+uk8KyHRPHzzIx+wPSgorm5WJlFYuE1b0tz6BzpN1zSc93sV6bdNFlEceBpbdAEbYt7csTWIZZbEhbM9DLrUyunhbvUMsuv6RdIk5/RSQ9xihWuU0ejhX6wPCcijDB2j1YHctbrAyMiXFKy/crhRktZFzezxx3fT9r4TGoJ5205j9xO1WO+lytKZADqIgTMDCTGBwZYzVLKSHjpgsKL24irO6xPp+0qxkP9YYLZaoBaIg9lN0Ttg7FnecCUfwxLtk54AMoWL6PxMN9srifK6o+/b9nlhgdLiFkPg/iQ7j/+Yck5LgF8VT3Hmh418wKGXl3Ugw5A31wUkm4jrKKuknFxMQiBFT3hiiQb0jig3reXmywZ4ImIpcZ/0/Dm2IF5lW9+Yg4QIvIJLWcsIzER3CMaZL3MEuAY4Nx7NxUdts+WaBoyy0cZnf0vl/NhIYo+5x8Tm4KfsVMKoF5Dl//iYkD7gmlMVGoaS/6nHGRq+pED4xCYi3OsP9esDZtBj2wSG75lsXkuyMU7UF3Y15ci6WvPwuxcmTQ2lQoLNutuARYPgjI=
-script: wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.20.tar.gz && tar -xzf mysql-5.7.20.tar.gz && pushd mysql-5.7.20/ && mkdir bld && cd bld && cmake .. && make -j8
+script: wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.20.tar.gz &&
+  tar -xzf mysql-5.7.20.tar.gz && pushd mysql-5.7.20/ && pwd
 addons:
   artifacts:
+    bucket: lgtv-tokyo
+    key:
+      secure: Sgbrjq0/9kH6kfmP1BxYDEVDDj7V56nMi1tXJNSU9mtFtR2jCfCBS4eAWduHAwQv6XiLP0/Kv/LI/my5R6w8Y7y6LI3j8PjFgHITlJSDidls2XDfawnNyKTU+r4Y1eM5JeRGCxu0tKUndZR/D7EN1JkQbiVNPL0Ear2sU6/mJPttkyLlWMAf22V8qBKbHbVut7zcGjxLJndDOYSRSB87JF7u0Ndls519qyhx0X6omz49Q16L5nBFzdSlsrKKpRbryh6gVBmwY+KVMnKPEGr48i6Ftek3SUVTN9qMaiEPU+5PvRlTe498LRGhFic7oeQRfjasLV/94cmcaGQWkYCDNdooGznmcLUPy+61N562YH1ML1a63/3xQHQtpbGjfguH1Wd9wxC+u7fBrVM5mu5PLEzCWy+mgzGaU7a+QUaiD9YeAKVGffwfWzIw5cs/ziLpZZsz3bYoJXY8/1fpSFvvjpDviTbx8gKslLQvN12jvoHUXtbWbUE68n4VTXfJ7miBYSN8frjsxUTziOcFEYyJtIzxPqYPfLhKEiywcG0DierYADcL0cN1wUI1SgVsqZg83HTf/g07r9f3LWSd/LtyFMqlAZUhLQMe6rg/h0hMiYzSfxVxFNtDCjypIfIYJNhoaRCQwoI/SJW1qn0uj4NKOUjoDV/WNyeWkLc/iJR8I0k=
+    secret:
+      secure: v4aJRZZf8HbNvtaLREmQaWzEJrCgwVi8/aiO588Nel5/PA3JUD6xuWz2HcJiE0OIXKAnYTmSv0XSqwaP1fJ5fDdseporuBDfCmycDzY1O+QBS+CApi2hwHivZ3yUFWNd2aOJpcOGvgWl09mGZb9pE5/WRsHOMLG7ZcpyBIdAUmyfcHbhKUVbCmhIBk9rsWFqR2Kg61AUOgpXDVl+2SNsYMsDxMhwHky4xa8ynWdlabIkJYAxc2S5/oUjtmHGotECEJM2Td2IrnVxz+BXHBh4JQOouC0UomfPDbV+0g+YVXFPuk5kgtnznnCw9HqM7X8icNOzfR9uxQ7D4r8AxqoViFuoqW1+qZjN10IuwurqiA3m5HzIFjDHAVBLOrWsqJJNl/J13rWJ2kSPnG0ou6+Gwg3ZWl92KPfHeyaukdPgTdJIoeApOVZKOC4BEOrjqGMghgiHf+wU+8vFrkhtiJPl8HBqowgVuXyL6S70DXrBk9GzPnKthR+qik43jjkZk8h8hZNzQTOKu6asOlWkkJnKJ4Ag5y+7lSTKPcxUzWPIqi40GMaWKMVWx2g9mlt8Bz/g72k1cTNlvP7ZKDmsKZhqcZYMftKmqCXE9DnUN9A9wTCYwpVWTFA/HvD4zcXd2Brjg7rNLfO/4zRBETSANovUyJdhYbn8nfXr7TuKJmPdnyI=
     paths:
     - mysql-5.7.20.tar.gz
