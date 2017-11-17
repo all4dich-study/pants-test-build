@@ -13,4 +13,4 @@ script: git clone https://github.com/jenkinsci/jenkins.git && pushd jenkins && m
 addons:
   artifacts:
     paths:
-    - $(find . -name "*.war" | tr "\n" ":")
+    - ./jenkins/war/target/jenkins.war
