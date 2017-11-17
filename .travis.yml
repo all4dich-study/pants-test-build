@@ -12,6 +12,7 @@ deploy:
     secure: lA8BMhKj/0dnl0iG0DBKOGDD4y+e14uMMG4ZJIXEmvwRNzDDIKk6W5TZmb8IFjFlYKWvIozBgO8FKVKoVQSFyCuf2LAPl6p2aQNseODotkpswvQdRF4aV7SOUHLBE2fKUzF11J3Ecgtsai96W5BeeL4lN39HK2DzUECCwr8Fp+pQUiaCMuY1nu22L6IajztMJ7FUeIEwXbgeYL+J31XvnDPb/cIWFwLD7vmJbT/FRATW9sLj7YHQCbxqfax729y0f6nT5u2rX6cb193gLnxuB8yPH4FAD4Xh6kNR/A4SWaNcWNuErLb+TPU2HyHXg6rws4VfA+eQvHJg3rJ/hwu7wd7uOQp3GmdZBMGTdclrKtPBPjzRDjY0GyOssU20hRrrm55Np8EILyijUYqaoVI4urSlZc+shJ19e2UwcAQPaPESUQGTLmgViINihZotApadQNNDhTywcNjPNhftMgJfTX/NNQChe2fuUifnX+aA5DqYbkxAuQ1oEAinjUm6CJy9e5CA6hig6qE1qd3AXJx/QQgPtcEyjWboCB3a9Pw0HyQU07CL+v7sJkFj+PQ1GwVFbhrp2Kp+MWebOitiPqsxb2j0yJI/cuAaLBE1JD7uEjWNpjyMdBf9Lf/mhT+FEAQhBDCPcCXGbuOIZgSFuwQgEpcQu0VX2n2z+9LMVPg3nNQ=
   bucket: lgtv-tokyo
   acl: private
+  upload-dir: my-build
   on:
     repo: all4dich-study/test-build
     branch: build_tomcat
