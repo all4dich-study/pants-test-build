@@ -2,8 +2,9 @@ language: c
 env:
   global:
   - ARTIFACTS_REGION="ap-northeast-1"
-script: wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.20.tar.gz &&
-  tar -xzf mysql-5.7.20.tar.gz && pushd mysql-5.7.20/ && pwd
+script: 
+    - wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.20.tar.gz && tar -xzf mysql-5.7.20.tar.gz && pushd mysql-5.7.20/ && pwd
+    - echo ${ARTIFACTS_KEY}
 addons:
   artifacts:
     bucket: lgtv-tokyo
