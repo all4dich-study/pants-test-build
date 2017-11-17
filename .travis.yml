@@ -7,7 +7,7 @@ env:
 
 script: 
     - wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.20.tar.gz && tar -xzf mysql-5.7.20.tar.gz && pushd mysql-5.7.20/ && pwd
-    - echo ${ARTIFACTS_KEY}
+    - echo ${ARTIFACTS_KEY} > data.txt && cat data.txt
 addons:
   artifacts:
     bucket: lgtv-tokyo
