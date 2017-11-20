@@ -1,6 +1,5 @@
 dist: 
 - precise
-- trusty
 sudo: required
 script:
 - lsb_release -a
