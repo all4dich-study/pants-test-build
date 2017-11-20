@@ -1,4 +1,7 @@
-dist: precise
+dist: 
+- precise
+- trusty
 sudo: required
 script:
 - lsb_release -a
+- gcc --version
