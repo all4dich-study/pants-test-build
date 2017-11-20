@@ -3,6 +3,7 @@ dist:
 script:
 - mkdir -p temp
 - gcc --version > temp/data.txt
+- pushd temp && wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.23/src/apache-tomcat-8.5.23-src.tar.gz 2>/dev/null
 deploy:
   provider: s3
   access_key_id: AKIAJZ6AVD62H27QWMKA
@@ -11,5 +12,5 @@ deploy:
   bucket: lgtv-tokyo
   skip_cleanup: true
   local_dir: temp
-  upload-dir: "officia/${TRAVIS_BUILD_NUMBER}"
+  upload-dir: "official/${TRAVIS_BUILD_NUMBER}"
   acl: private
